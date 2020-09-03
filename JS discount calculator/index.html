@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>&#x1F54B Shaikh claculator</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500&display=swap');
+		*{ margin: 0; padding: 0; box-sizing: border-box; font-family: 'Playfair Display', serif;
+		}
+
+		main{
+			height: 100vh;
+			background-color: #F4B14A;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+
+		div{
+			max-width: 599px; height: 580px;
+			border-radius: 50%;
+			background-color: #F4B14A;
+			padding: 50px;
+			box-shadow: 1px 1px 15px 3px #143D59;
+		}
+
+		h1{
+			margin-bottom: 10px;
+			text-shadow: 2px 3px 1.5px white;
+		}
+
+        label{
+        	text-align: center;
+        	display: block;
+        	margin-top: 23px;
+        }
+
+        input{
+        	width: 300px;
+        	border-top-right-radius: 10px;
+        	border-top-left-radius: 10px;
+        	border-bottom-right-radius: 10px;
+        	border-bottom-left-radius: 10px;
+        	padding: 10px 0;
+        }
+
+        button{
+        	border-radius: 10px;
+        	padding: 15px 30px;
+        	font-size: 1rem;
+        	text-transform: uppercase;
+        	border: none;
+        	color: white;
+        	background: #143D59;
+        	box-shadow: 1px 1px 5px 1px #143D59;
+        	margin-top: 40px;
+        	margin-left: 72px;
+        }
+
+	</style>
+</head>
+<body>
+
+<main>
+	<h1>Discount Calculator</h1>
+	<div>
+
+		<label>Bill amount</label>
+		<input type="text" id="bill_amount" placeholder="00000">
+		<br>
+		<label>Discount percentage</label>
+		<input type="text" id="tip_perc" placeholder="00000">
+		<br>
+		<label>Discount amount</label>
+		<input type="text" id="tip_total"disabled>
+		<br>
+		<label>Total bill</label>
+		<input type="text" id="total_bill" disabled>
+		<br>
+
+		<button onclick="tipcalcy()">Calculate</button>
+	</div>
+</main>
+
+
+<script>
+	
+  const tipcalcy = () => {
+  	let amount = document.getElementById('bill_amount').value;
+  	 let perc = document.getElementById('tip_perc').value;
+
+  	 let tip = amount * (perc / 100);
+      
+
+     let total = tip - Number(amount);
+      
+     document.getElementById('tip_total').value = tip;
+     document.getElementById('total_bill').value = total;
+  }
+
+</script>
+
+</body>
+</html>
